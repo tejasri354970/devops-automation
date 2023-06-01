@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t spring-boot-docker.jar .'
+                    sh 'docker build -t target/devops-integration.jar .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u tejasudheer -p ${teja@354970}'
 
 }
-                   sh 'docker push spring-boot-docker.jar'
+                   sh 'docker push target/devops-integration.jar'
                 }
             }
         }
